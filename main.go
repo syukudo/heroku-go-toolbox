@@ -10,7 +10,7 @@ import (
 
 func handleHome(w http.ResponseWriter, r *http.Request) {
 	log.Printf("%s %s", r.Method, r.RequestURI)
-	t := template.Must(template.ParseFiles("template/index.gohtml"))
+	t := template.Must(template.ParseFiles("template/index.gohtml", "template/_menu.gohtml"))
 	if err := t.Execute(w, struct {
 		UserName string
 		Time     time.Time
